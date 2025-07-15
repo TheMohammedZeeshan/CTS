@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: stg_ctgov__studies
+    description: "Flattened clinical trial studies from raw JSON"
+    columns:
+      - name: nct_id
+        tests:
+          - not_null
+      - name: phase
+        description: "Trial phase, either Phase 2 or Phase 3"
+      - name: first_submit_date
+        description: "First submitted date for the trial"
+
+  - name: int_sponsor_summary
+    description: "Aggregated summary of early stopped trials by sponsor class"
+    columns:
+      - name: sponsor_class
+      - name: early_stop_rate
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 1
+              strictly: false

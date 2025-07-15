@@ -1,0 +1,55 @@
+[2025-07-15T10:11:22.709+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-15T10:11:22.719+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: run_dbt_models.dbt_test manual__2025-07-15T10:11:06.626839+00:00 [queued]>
+[2025-07-15T10:11:22.722+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: run_dbt_models.dbt_test manual__2025-07-15T10:11:06.626839+00:00 [queued]>
+[2025-07-15T10:11:22.722+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-07-15T10:11:22.737+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_test> on 2025-07-15 10:11:06.626839+00:00
+[2025-07-15T10:11:22.740+0000] {standard_task_runner.py:63} INFO - Started process 9849 to run task
+[2025-07-15T10:11:22.742+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'run_dbt_models', 'dbt_test', 'manual__2025-07-15T10:11:06.626839+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/run_dbt.py', '--cfg-path', '/tmp/tmp2hbnxkt8']
+[2025-07-15T10:11:22.742+0000] {standard_task_runner.py:91} INFO - Job 8: Subtask dbt_test
+[2025-07-15T10:11:22.775+0000] {task_command.py:426} INFO - Running <TaskInstance: run_dbt_models.dbt_test manual__2025-07-15T10:11:06.626839+00:00 [running]> on host ZeeLaptop.localdomain
+[2025-07-15T10:11:22.831+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='run_dbt_models' AIRFLOW_CTX_TASK_ID='dbt_test' AIRFLOW_CTX_EXECUTION_DATE='2025-07-15T10:11:06.626839+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-15T10:11:06.626839+00:00'
+[2025-07-15T10:11:22.832+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-15T10:11:22.832+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-07-15T10:11:22.833+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /home/reach2zeeshan/clinicaltrials &&\n        /home/reach2zeeshan/clinicaltrials/venv/bin/dbt test\n        ']
+[2025-07-15T10:11:22.837+0000] {subprocess.py:86} INFO - Output:
+[2025-07-15T10:11:24.254+0000] {subprocess.py:93} INFO - [0m10:11:24  Running with dbt=1.10.4
+[2025-07-15T10:11:24.631+0000] {subprocess.py:93} INFO - [0m10:11:24  Registered adapter: snowflake=1.10.0
+[2025-07-15T10:11:24.978+0000] {subprocess.py:93} INFO - [0m10:11:24  Found 2 models, 2 data tests, 1 source, 476 macros
+[2025-07-15T10:11:24.980+0000] {subprocess.py:93} INFO - [0m10:11:24
+[2025-07-15T10:11:24.980+0000] {subprocess.py:93} INFO - [0m10:11:24  Concurrency: 1 threads (target='dev')
+[2025-07-15T10:11:24.980+0000] {subprocess.py:93} INFO - [0m10:11:24
+[2025-07-15T10:11:27.776+0000] {subprocess.py:93} INFO - [0m10:11:27  1 of 2 START test dbt_expectations_expect_column_values_to_be_between_int_sponsor_summary_early_stop_rate__1__0__False  [RUN]
+[2025-07-15T10:11:27.792+0000] {subprocess.py:93} INFO - [0m10:11:27  1 of 2 ERROR dbt_expectations_expect_column_values_to_be_between_int_sponsor_summary_early_stop_rate__1__0__False  [[31mERROR[0m in 0.02s]
+[2025-07-15T10:11:27.793+0000] {subprocess.py:93} INFO - [0m10:11:27  2 of 2 START test not_null_stg_ctgov__studies_nct_id ........................... [RUN]
+[2025-07-15T10:11:28.726+0000] {subprocess.py:93} INFO - [0m10:11:28  2 of 2 PASS not_null_stg_ctgov__studies_nct_id ................................. [[32mPASS[0m in 0.93s]
+[2025-07-15T10:11:29.458+0000] {subprocess.py:93} INFO - [0m10:11:29
+[2025-07-15T10:11:29.459+0000] {subprocess.py:93} INFO - [0m10:11:29  Finished running 2 data tests in 0 hours 0 minutes and 4.48 seconds (4.48s).
+[2025-07-15T10:11:29.496+0000] {subprocess.py:93} INFO - [0m10:11:29
+[2025-07-15T10:11:29.497+0000] {subprocess.py:93} INFO - [0m10:11:29  [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[2025-07-15T10:11:29.497+0000] {subprocess.py:93} INFO - [0m10:11:29
+[2025-07-15T10:11:29.497+0000] {subprocess.py:93} INFO - [0m10:11:29  [31mFailure in test dbt_expectations_expect_column_values_to_be_between_int_sponsor_summary_early_stop_rate__1__0__False (models/stg_ctgov__studies.yaml)[0m
+[2025-07-15T10:11:29.498+0000] {subprocess.py:93} INFO - [0m10:11:29    Compilation Error in test dbt_expectations_expect_column_values_to_be_between_int_sponsor_summary_early_stop_rate__1__0__False (models/stg_ctgov__studies.yaml)
+[2025-07-15T10:11:29.498+0000] {subprocess.py:93} INFO -   'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[2025-07-15T10:11:29.498+0000] {subprocess.py:93} INFO - [0m10:11:29
+[2025-07-15T10:11:29.498+0000] {subprocess.py:93} INFO - [0m10:11:29  Done. PASS=1 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=2
+[2025-07-15T10:11:30.826+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-07-15T10:11:30.827+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-15T10:11:30.832+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/reach2zeeshan/clinicaltrials/venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/reach2zeeshan/clinicaltrials/venv/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/reach2zeeshan/clinicaltrials/venv/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/reach2zeeshan/clinicaltrials/venv/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-07-15T10:11:30.835+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=run_dbt_models, task_id=dbt_test, run_id=manual__2025-07-15T10:11:06.626839+00:00, execution_date=20250715T101106, start_date=20250715T101122, end_date=20250715T101130
+[2025-07-15T10:11:30.849+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 8 for task dbt_test (Bash command failed. The command returned a non-zero exit code 1.; 9849)
+[2025-07-15T10:11:30.857+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-07-15T10:11:30.865+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-15T10:11:30.865+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

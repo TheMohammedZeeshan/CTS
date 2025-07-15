@@ -1,0 +1,25 @@
+[2025-07-15T12:10:07.153+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-15T12:10:07.165+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: run_dbt_models.ingest_data manual__2025-07-15T12:10:02.140807+00:00 [queued]>
+[2025-07-15T12:10:07.169+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: run_dbt_models.ingest_data manual__2025-07-15T12:10:02.140807+00:00 [queued]>
+[2025-07-15T12:10:07.169+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-07-15T12:10:07.185+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): ingest_data> on 2025-07-15 12:10:02.140807+00:00
+[2025-07-15T12:10:07.193+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'run_dbt_models', 'ingest_data', 'manual__2025-07-15T12:10:02.140807+00:00', '--job-id', '32', '--raw', '--subdir', 'DAGS_FOLDER/run_dbt.py', '--cfg-path', '/tmp/tmp8zkm9os7']
+[2025-07-15T12:10:07.195+0000] {standard_task_runner.py:91} INFO - Job 32: Subtask ingest_data
+[2025-07-15T12:10:07.202+0000] {logging_mixin.py:188} WARNING - /home/reach2zeeshan/clinicaltrials/venv/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=955) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-15T12:10:07.203+0000] {standard_task_runner.py:63} INFO - Started process 960 to run task
+[2025-07-15T12:10:07.238+0000] {task_command.py:426} INFO - Running <TaskInstance: run_dbt_models.ingest_data manual__2025-07-15T12:10:02.140807+00:00 [running]> on host ZeeLaptop.localdomain
+[2025-07-15T12:10:07.299+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='run_dbt_models' AIRFLOW_CTX_TASK_ID='ingest_data' AIRFLOW_CTX_EXECUTION_DATE='2025-07-15T12:10:02.140807+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-15T12:10:02.140807+00:00'
+[2025-07-15T12:10:07.300+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-15T12:10:07.301+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-07-15T12:10:07.302+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n        /home/reach2zeeshan/clinicaltrials/venv/bin/python /home/reach2zeeshan/clinicaltrials/ingestion/data_ingestion.py\n        ']
+[2025-07-15T12:10:07.313+0000] {subprocess.py:86} INFO - Output:
+[2025-07-15T12:10:32.050+0000] {subprocess.py:93} INFO - Fetching studies…
+[2025-07-15T12:10:32.051+0000] {subprocess.py:93} INFO - Total fetched: 458 records.
+[2025-07-15T12:10:32.051+0000] {subprocess.py:93} INFO - Loading into Snowflake…
+[2025-07-15T12:10:32.051+0000] {subprocess.py:93} INFO - Loaded 458 records successfully.
+[2025-07-15T12:10:32.211+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-07-15T12:10:32.212+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-15T12:10:32.228+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=run_dbt_models, task_id=ingest_data, run_id=manual__2025-07-15T12:10:02.140807+00:00, execution_date=20250715T121002, start_date=20250715T121007, end_date=20250715T121032
+[2025-07-15T12:10:32.274+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-15T12:10:32.284+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-07-15T12:10:32.290+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

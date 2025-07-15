@@ -1,0 +1,37 @@
+[2025-07-15T12:14:12.799+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-15T12:14:12.809+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: run_dbt_models.dbt_test manual__2025-07-15T12:10:02.140807+00:00 [queued]>
+[2025-07-15T12:14:12.814+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: run_dbt_models.dbt_test manual__2025-07-15T12:10:02.140807+00:00 [queued]>
+[2025-07-15T12:14:12.814+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-07-15T12:14:12.828+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_test> on 2025-07-15 12:10:02.140807+00:00
+[2025-07-15T12:14:12.835+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'run_dbt_models', 'dbt_test', 'manual__2025-07-15T12:10:02.140807+00:00', '--job-id', '34', '--raw', '--subdir', 'DAGS_FOLDER/run_dbt.py', '--cfg-path', '/tmp/tmpm_armtd6']
+[2025-07-15T12:14:12.838+0000] {standard_task_runner.py:91} INFO - Job 34: Subtask dbt_test
+[2025-07-15T12:14:12.844+0000] {logging_mixin.py:188} WARNING - /home/reach2zeeshan/clinicaltrials/venv/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=1013) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-15T12:14:12.844+0000] {standard_task_runner.py:63} INFO - Started process 1018 to run task
+[2025-07-15T12:14:12.871+0000] {task_command.py:426} INFO - Running <TaskInstance: run_dbt_models.dbt_test manual__2025-07-15T12:10:02.140807+00:00 [running]> on host ZeeLaptop.localdomain
+[2025-07-15T12:14:12.922+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='run_dbt_models' AIRFLOW_CTX_TASK_ID='dbt_test' AIRFLOW_CTX_EXECUTION_DATE='2025-07-15T12:10:02.140807+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-15T12:10:02.140807+00:00'
+[2025-07-15T12:14:12.923+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-15T12:14:12.923+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-07-15T12:14:12.924+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /home/reach2zeeshan/clinicaltrials &&\n        /home/reach2zeeshan/clinicaltrials/venv/bin/dbt test\n        ']
+[2025-07-15T12:14:12.930+0000] {subprocess.py:86} INFO - Output:
+[2025-07-15T12:14:14.816+0000] {subprocess.py:93} INFO - [0m12:14:14  Running with dbt=1.10.4
+[2025-07-15T12:14:15.776+0000] {subprocess.py:93} INFO - [0m12:14:15  Registered adapter: snowflake=1.10.0
+[2025-07-15T12:14:16.199+0000] {subprocess.py:93} INFO - [0m12:14:16  Found 2 models, 2 data tests, 1 source, 743 macros
+[2025-07-15T12:14:16.280+0000] {subprocess.py:93} INFO - [0m12:14:16
+[2025-07-15T12:14:16.280+0000] {subprocess.py:93} INFO - [0m12:14:16  Concurrency: 1 threads (target='dev')
+[2025-07-15T12:14:16.281+0000] {subprocess.py:93} INFO - [0m12:14:16
+[2025-07-15T12:14:48.020+0000] {subprocess.py:93} INFO - [0m12:14:48  1 of 2 START test dbt_expectations_expect_column_values_to_be_between_int_sponsor_summary_early_stop_rate__1__0__False  [RUN]
+[2025-07-15T12:14:48.767+0000] {subprocess.py:93} INFO - [0m12:14:48  1 of 2 PASS dbt_expectations_expect_column_values_to_be_between_int_sponsor_summary_early_stop_rate__1__0__False  [[32mPASS[0m in 0.75s]
+[2025-07-15T12:14:48.770+0000] {subprocess.py:93} INFO - [0m12:14:48  2 of 2 START test not_null_stg_ctgov__studies_nct_id ........................... [RUN]
+[2025-07-15T12:14:49.456+0000] {subprocess.py:93} INFO - [0m12:14:49  2 of 2 PASS not_null_stg_ctgov__studies_nct_id ................................. [[32mPASS[0m in 0.68s]
+[2025-07-15T12:14:50.530+0000] {subprocess.py:93} INFO - [0m12:14:50
+[2025-07-15T12:14:50.531+0000] {subprocess.py:93} INFO - [0m12:14:50  Finished running 2 data tests in 0 hours 0 minutes and 34.25 seconds (34.25s).
+[2025-07-15T12:14:50.599+0000] {subprocess.py:93} INFO - [0m12:14:50
+[2025-07-15T12:14:50.599+0000] {subprocess.py:93} INFO - [0m12:14:50  [32mCompleted successfully[0m
+[2025-07-15T12:14:50.600+0000] {subprocess.py:93} INFO - [0m12:14:50
+[2025-07-15T12:14:50.600+0000] {subprocess.py:93} INFO - [0m12:14:50  Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[2025-07-15T12:14:52.306+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-07-15T12:14:52.309+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-15T12:14:52.326+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=run_dbt_models, task_id=dbt_test, run_id=manual__2025-07-15T12:10:02.140807+00:00, execution_date=20250715T121002, start_date=20250715T121412, end_date=20250715T121452
+[2025-07-15T12:14:52.372+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-15T12:14:52.380+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-15T12:14:52.380+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

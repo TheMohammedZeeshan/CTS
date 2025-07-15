@@ -1,0 +1,26 @@
+from airflow import DAG
+from airflow.operators.bash import BashOperator
+from datetime import datetime
+
+default_args = {
+    'start_date': datetime(2023, 1, 1),
+}
+
+with DAG(
+    dag_id='run_dbt_models',
+    schedule_interval='@monthly',  # Change as needed
+    default_args=default_args,
+    catchup=False,
+    tags=['dbt'],
+) as dag:
+
+    dbt_run = BashOperator(
+        task_id='dbt_run',
+        bash_command="""
+        cd /home/reach2zeeshan/clinicaltrials &&
+        source venv/bin/activate &&
+        dbt run
+        """,
+    )
+
+

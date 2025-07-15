@@ -1,0 +1,9 @@
+
+version: 2
+
+sources:
+  - name: raw
+    database: DB_CLINICAL_TRIALS_GOV
+    schema: SH_CLINICAL_TRIALS_GOV_RAW
+    tables:
+      - name: RAW_CTGOV__STUDIES

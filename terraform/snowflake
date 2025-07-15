@@ -1,0 +1,16 @@
+resource "snowflake_warehouse" "compute_wh" {
+  name             = "COMPUTE_WH"
+  warehouse_size   = "XSMALL"
+  auto_suspend     = 60
+  auto_resume      = true
+  initially_suspended = true
+}
+
+resource "snowflake_database" "clinical_trials" {
+  name = "DB_CLINICAL_TRIALS_GOV"
+}
+
+resource "snowflake_schema" "raw_schema" {
+  name     = "SH_CLINICAL_TRIALS_GOV_RAW"
+  database = snowflake_database.clinical_trials.name
+} 

@@ -1,0 +1,1 @@
+[2025-07-15T10:57:06.657+0000] {task_context_logger.py:104} ERROR - Executor reports task instance <TaskInstance: run_dbt_models.ingest_data manual__2025-07-15T10:50:45.194882+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?
